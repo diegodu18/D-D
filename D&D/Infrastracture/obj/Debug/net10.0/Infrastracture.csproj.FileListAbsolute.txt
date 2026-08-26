@@ -1,0 +1,11 @@
+C:\Users\diego\source\repos\D&D\Infrastracture\bin\Debug\net10.0\Infrastracture.deps.json
+C:\Users\diego\source\repos\D&D\Infrastracture\bin\Debug\net10.0\Infrastracture.dll
+C:\Users\diego\source\repos\D&D\Infrastracture\bin\Debug\net10.0\Infrastracture.pdb
+C:\Users\diego\source\repos\D&D\Infrastracture\obj\Debug\net10.0\Infrastracture.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\diego\source\repos\D&D\Infrastracture\obj\Debug\net10.0\Infrastracture.AssemblyInfoInputs.cache
+C:\Users\diego\source\repos\D&D\Infrastracture\obj\Debug\net10.0\Infrastracture.AssemblyInfo.cs
+C:\Users\diego\source\repos\D&D\Infrastracture\obj\Debug\net10.0\Infrastracture.csproj.CoreCompileInputs.cache
+C:\Users\diego\source\repos\D&D\Infrastracture\obj\Debug\net10.0\Infrastracture.dll
+C:\Users\diego\source\repos\D&D\Infrastracture\obj\Debug\net10.0\refint\Infrastracture.dll
+C:\Users\diego\source\repos\D&D\Infrastracture\obj\Debug\net10.0\Infrastracture.pdb
+C:\Users\diego\source\repos\D&D\Infrastracture\obj\Debug\net10.0\ref\Infrastracture.dll

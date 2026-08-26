@@ -1,0 +1,10 @@
+C:\Users\diego\source\repos\D&D\ScreenGame\bin\Debug\ScreenGame.exe.config
+C:\Users\diego\source\repos\D&D\ScreenGame\bin\Debug\ScreenGame.exe
+C:\Users\diego\source\repos\D&D\ScreenGame\bin\Debug\ScreenGame.pdb
+C:\Users\diego\source\repos\D&D\ScreenGame\obj\Debug\ScreenGame.csproj.AssemblyReference.cache
+C:\Users\diego\source\repos\D&D\ScreenGame\obj\Debug\ScreenGame.Properties.Resources.resources
+C:\Users\diego\source\repos\D&D\ScreenGame\obj\Debug\ScreenGame.csproj.GenerateResource.cache
+C:\Users\diego\source\repos\D&D\ScreenGame\obj\Debug\ScreenGame.csproj.CoreCompileInputs.cache
+C:\Users\diego\source\repos\D&D\ScreenGame\obj\Debug\ScreenGame.exe
+C:\Users\diego\source\repos\D&D\ScreenGame\obj\Debug\ScreenGame.pdb
+C:\Users\diego\source\repos\D&D\ScreenGame\obj\Debug\ScreenGame.Menu.resources

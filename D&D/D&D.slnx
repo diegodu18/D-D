@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Infrastracture/Infrastracture.csproj" />
+  <Project Path="ScreenGame/ScreenGame.csproj" />
+</Solution>
