@@ -1,28 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace Infrastracture.GameItems
 {
-    public class Dice : IDice
+    public static class Dice
     {
-        [MaxLength(20)]
-        public int Return { get; set; }
+        public static int DiceAmount { get; private set; } = 1;
 
-        public int DiceAmount = 1;
-
-        public void AddDice(Dice dice, int amount)
+        public static void AddDice(int amount)
         {
-           this.DiceAmount += amount;
-
+            DiceAmount += amount;
         }
 
-        public int RollDice(Dice dice)
+        public static int RollDice()
         {
-            return this.Return = Random.Shared.Next(0, 20) * this.DiceAmount;
+            var result = 0;
+
+            for (var die = 0; die < DiceAmount; die++)
+            {
+                result += Random.Shared.Next(1, 21);
+            }
+
+            return result;
         }
     }
-
-
 }

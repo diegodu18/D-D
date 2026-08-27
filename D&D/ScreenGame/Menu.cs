@@ -20,6 +20,7 @@ namespace ScreenGame
         public Menu()
         {
             InitializeComponent();
+            ConfigureDungeonsAndDragonsTheme();
             // determinar idioma guardado
             var langCodeFile = Path.Combine(Application.StartupPath, "lang_code.txt");
             if (File.Exists(langCodeFile))
@@ -28,6 +29,55 @@ namespace ScreenGame
                 if (!string.IsNullOrEmpty(c)) _currentLangCode = c;
             }
             _lang = new Localization.LanguageService(Application.StartupPath, _currentLangCode);
+        }
+
+        private void ConfigureDungeonsAndDragonsTheme()
+        {
+            BackColor = Color.FromArgb(25, 20, 18);
+            ForeColor = Color.FromArgb(232, 208, 158);
+            Font = new Font("Georgia", 10F, FontStyle.Regular);
+
+            lblTitle.Font = new Font("Georgia", 25F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.FromArgb(218, 166, 73);
+            lblSubtitle.Font = new Font("Georgia", 9F, FontStyle.Bold);
+            lblSubtitle.ForeColor = Color.FromArgb(178, 143, 91);
+            lblDivider.ForeColor = Color.FromArgb(124, 87, 39);
+
+            StyleMenuButton(btnNewGame);
+            StyleMenuButton(btnLoadGame);
+            StyleMenuButton(btnSettings);
+            StyleMenuButton(btnExitGame);
+            btnExitGame.ForeColor = Color.FromArgb(196, 125, 91);
+
+            Paint += Menu_Paint;
+        }
+
+        private void StyleMenuButton(Button button)
+        {
+            button.BackColor = Color.FromArgb(54, 39, 31);
+            button.ForeColor = Color.FromArgb(232, 208, 158);
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderColor = Color.FromArgb(145, 105, 48);
+            button.FlatAppearance.BorderSize = 1;
+            button.Font = new Font("Georgia", 11F, FontStyle.Bold);
+            button.Cursor = Cursors.Hand;
+            button.UseVisualStyleBackColor = false;
+        }
+
+        private void Menu_Paint(object sender, PaintEventArgs e)
+        {
+            using (var pen = new Pen(Color.FromArgb(87, 59, 33), 1F))
+            {
+                e.Graphics.DrawRectangle(pen, 18, 18, ClientSize.Width - 36, ClientSize.Height - 36);
+                e.Graphics.DrawLine(pen, 45, 158, 270, 158);
+                e.Graphics.DrawLine(pen, 580, 158, 805, 158);
+            }
+
+            using (var brush = new SolidBrush(Color.FromArgb(145, 105, 48)))
+            {
+                e.Graphics.DrawString("✦", new Font("Georgia", 18F), brush, 262, 132);
+                e.Graphics.DrawString("✦", new Font("Georgia", 18F), brush, 565, 132);
+            }
         }
 
         private void Menu_Load(object sender, EventArgs e)
