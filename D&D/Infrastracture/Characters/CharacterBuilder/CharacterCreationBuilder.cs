@@ -1,43 +1,123 @@
-using Infrastracture.Characters.Spices;
-using Infrastracture.Characters.Classes;
+using CharacterAbilities = global::Infrastracture.Characters.Abilities.Abilities;
 using Infrastracture.Characters.BackGrounds;
+using Infrastracture.Characters.Classes;
+using Infrastracture.Characters.Species;
+using Infrastracture.Characters.Spices;
 
 namespace Infrastracture.Characters.CharacterBuilder
 {
     public sealed class CharacterCreationBuilder
     {
-        private readonly PlayableCharacter character;
+        private string? name;
+        private ClassType? classType;
+        private Specie? specie;
+        private BackGround? background;
+        private CharacterAbilities? abilities;
+        private int level = 1;
 
-        private CharacterCreationBuilder(PlayableCharacter character)
+        private CharacterCreationBuilder(string name)
         {
-            this.character = character;
+            ArgumentException.ThrowIfNullOrWhiteSpace(name);
+            this.name = name;
         }
 
-        public static CharacterCreationBuilder Create(string name, ClassType classType)
+        public static CharacterCreationBuilder Create(string name)
         {
-            var character = PlayableCharacterFactory.Create(classType);
-            character.Name = name;
-
-            return new CharacterCreationBuilder(character);
+            return new CharacterCreationBuilder(name);
         }
 
-        public CharacterCreationBuilder WithBackground(BackGround.LoreType loreType)
+        public CharacterCreationBuilder CreateClass(ClassType classType)
         {
-            var background = new BackGround(loreType);
+            ArgumentNullException.ThrowIfNull(classType);
+            this.classType = classType;
 
             return this;
         }
 
-        public CharacterCreationBuilder WithSpecie(SpecieName specieName)
+        public CharacterCreationBuilder CreateBackground(LoreType loreType)
         {
-            var specie = new Specie(specieName);
+            background = new BackGround(loreType);
 
+            return this;
+        }
+
+        public CharacterCreationBuilder CreateSpecie(SpecieName specieName)
+        {
+            specie = SpecieFactory.Create(specieName);
+
+            return this;
+        }
+
+        public CharacterCreationBuilder CreateSpecie(ElfSubType subType)
+        {
+            specie = SpecieFactory.Create(subType);
+
+            return this;
+        }
+
+        public CharacterCreationBuilder CreateSpecie(GnomeSubType subType)
+        {
+            specie = SpecieFactory.Create(subType);
+
+            return this;
+        }
+
+        public CharacterCreationBuilder CreateSpecie(GoliathSubType subType)
+        {
+            specie = SpecieFactory.Create(subType);
+
+            return this;
+        }
+
+        public CharacterCreationBuilder CreateSpecie(DragonbornSubType subType)
+        {
+            specie = SpecieFactory.Create(subType);
+
+            return this;
+        }
+
+        public CharacterCreationBuilder CreateAbilities(CharacterAbilities abilities)
+        {
+            ArgumentNullException.ThrowIfNull(abilities);
+            this.abilities = abilities;
+
+            return this;
+        }
+
+        public CharacterCreationBuilder AtLevel(int level)
+        {
+            if (level < 1)
+            {
+                throw new ArgumentOutOfRangeException(nameof(level), level, "El nivel debe ser mayor que cero.");
+            }
+
+            this.level = level;
             return this;
         }
 
         public PlayableCharacter Build()
         {
-            return character;
+            if (classType is null)
+            {
+                throw new InvalidOperationException("La clase del personaje es obligatoria.");
+            }
+
+            if (specie is null)
+            {
+                throw new InvalidOperationException("La especie del personaje es obligatoria.");
+            }
+
+            if (background is null)
+            {
+                throw new InvalidOperationException("El background del personaje es obligatorio.");
+            }
+
+            if (abilities is null)
+            {
+                throw new InvalidOperationException("Las habilidades del personaje son obligatorias.");
+            }
+
+            return new PlayableCharacter(name!, specie, background, classType, level, abilities!);
         }
     }
 }

@@ -9,13 +9,20 @@ namespace Infrastracture.Characters.Spices
         Humanoide
     }
 
+    public enum  Size
+    {
+        Small,
+        Medium,
+        Large,
+    }
+
     public enum SpecieName
     {
         Human,
         Elf,
         Dwarf,
         Orc,
-        Goblin,
+        Gnome,
         Goliath,
         Halfling,
         Tieling,

@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Infrastracture.Characters.Equipment
 {
-    public class Wepons
+    public class Armours
     {
         public int ItemID { get; set; }
         public string Name { get; set; }
-        public PhysicalDamageType DamageType { get; set; }
-        public ElementalDamageType? ElementalDamageType { get; set; }
+        public ElementalDamageType? Type { get; set; }
+
     }
 }

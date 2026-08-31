@@ -9,7 +9,7 @@ namespace Infrastracture.Characters
             Name = name;
             Level = level;
             LifeSpan = lifeSpan;
-            specie = specieType;
+            Specie = specieType;
 
         }
 
