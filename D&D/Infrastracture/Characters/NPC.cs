@@ -4,7 +4,7 @@ namespace Infrastracture.Characters
 {
     public class NPC : Character
     {
-        public NPC(string name, int level, int lifeSpan, Specie specieType)
+        public NPC(string name, short level, short lifeSpan, Specie specieType)
         {
             Name = name;
             Level = level;

@@ -9,7 +9,7 @@ namespace Infrastracture.Characters
         {
         }
 
-        protected Character(string name, Specie specie, int level)
+        protected Character(string name, Specie specie, short level)
         {
             Name = name;
             Specie = specie;
@@ -18,12 +18,13 @@ namespace Infrastracture.Characters
         }
 
         public string Name { get; set; }
-        public int Level { get; set; } = 1;
-        public int LifeSpan { get; set; }
+        public short Level { get; set; } = 1;
+        public short LifeSpan { get; set; }
         public Specie Specie { get; set; }
         public Infrastracture.Characters.Abilities.Abilities Abilities { get; set; }
-        public Armours? Armour { get; set; }
-        public Wepons? Wepons { get; set; }
+        public List<Armours>? Armour { get; set; }
+        public List<Wepons>? Wepons { get; set; }
+        public List<Spells.Spell> Spells { get; set; } = new List<Spells.Spell>();
 
     }
 }

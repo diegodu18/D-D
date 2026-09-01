@@ -6,23 +6,23 @@ namespace Infrastracture.Characters.Abilities
 {
     public class Skills
     {
-        public int Acrobatics { get; set; }
-        public int AnimalHandling { get; set; }
-        public int Arcana { get; set; }
-        public int Athletics { get; set; }
-        public int Deception { get; set; }
-        public int History { get; set; }
-        public int Insight { get; set; }
-        public int Intimidation { get; set; }
-        public int Investigation { get; set; }
-        public int Medicine { get; set; }
-        public int Nature { get; set; }
-        public int Perception { get; set; }
-        public int Performance { get; set; }
-        public int Persuasion { get; set; }
-        public int Religion { get; set; }
-        public int SleightOfHand { get; set; }
-        public int Stealth { get; set; }
-        public int Survival { get; set; }
+        public short Acrobatics { get; set; }
+        public short AnimalHandling { get; set; }
+        public short Arcana { get; set; }
+        public short Athletics { get; set; }
+        public short Deception { get; set; }
+        public short History { get; set; }
+        public short Insight { get; set; }
+        public short Intimidation { get; set; }
+        public short Investigation { get; set; }
+        public short Medicine { get; set; }
+        public short Nature { get; set; }
+        public short Perception { get; set; }
+        public short Performance { get; set; }
+        public short Persuasion { get; set; }
+        public short Religion { get; set; }
+        public short SleightOfHand { get; set; }
+        public short Stealth { get; set; }
+        public short Survival { get; set; }
     }
 }

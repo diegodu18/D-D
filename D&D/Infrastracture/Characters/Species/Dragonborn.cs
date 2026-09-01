@@ -1,5 +1,5 @@
-﻿using Infrastracture.Characters.Abilities;
-using Infrastracture.Characters.Spices;
+﻿using Infrastracture.Characters.Spices;
+using Infrastracture.GameItems;
 
 namespace Infrastracture.Characters.Species
 {

@@ -1,4 +1,5 @@
 ﻿using Infrastracture.Characters.Spices;
+using Infrastracture.GameItems;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,13 +17,13 @@ namespace Infrastracture.Characters.Species
             DarkVisionLenght = 60;
             switch(subType) {
                 case TielingSubType.Chthonic:
-                    DamageResistence = Abilities.ElementalDamageType.Necrotic;
+                    DamageResistence = ElementalDamageType.Necrotic;
                     break;
                 case TielingSubType.Infernal:
-                    DamageResistence = Abilities.ElementalDamageType.Fire;
+                    DamageResistence = ElementalDamageType.Fire;
                     break;
                 case TielingSubType.Abyssal:
-                    DamageResistence = Abilities.ElementalDamageType.Poison;
+                    DamageResistence = ElementalDamageType.Poison;
                     break;
             }
         }

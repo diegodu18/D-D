@@ -7,12 +7,12 @@ namespace Infrastracture.Characters.Spells
     public enum SpellType
     {
         /// <summary>
-        ///  Inflicts raw hit point damage to one or many targets.
+        ///  Inflicts raw hit poshort damage to one or many targets.
         /// </summary>
         Damage,
 
        /// <summary>
-       /// Restores hit points, removes negative conditions, or revives the dead.
+       /// Restores hit poshorts, removes negative conditions, or revives the dead.
        /// </summary>
         Healing,
 

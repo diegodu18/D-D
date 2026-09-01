@@ -7,11 +7,11 @@ namespace Infrastracture.Characters.Abilities
 {
     public class Abilities
     {
-        public int Strength { get; set; }
-        public int Dexterity { get; set; }
-        public int Constitution { get; set; }
-        public int Intelligence { get; set; }
-        public int Wisdom { get; set; }
-        public int Charisma { get; set; }
+        public short Strength { get; set; }
+        public short Dexterity { get; set; }
+        public short Constitution { get; set; }
+        public short Intelligence { get; set; }
+        public short Wisdom { get; set; }
+        public short Charisma { get; set; }
     }
 }

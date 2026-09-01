@@ -3,6 +3,7 @@ using Infrastracture.Characters.BackGrounds;
 using Infrastracture.Characters.Classes;
 using Infrastracture.Characters.Species;
 using Infrastracture.Characters.Spices;
+using Infrastracture.Characters.Spells;
 
 namespace Infrastracture.Characters.CharacterBuilder
 {
@@ -13,12 +14,15 @@ namespace Infrastracture.Characters.CharacterBuilder
         private Specie? specie;
         private BackGround? background;
         private CharacterAbilities? abilities;
-        private int level = 1;
+
+        private List<Spell> spells;
+        private short level = 1;
 
         private CharacterCreationBuilder(string name)
         {
             ArgumentException.ThrowIfNullOrWhiteSpace(name);
             this.name = name;
+            this.spells = new List<Spell>();
         }
 
         public static CharacterCreationBuilder Create(string name)
@@ -34,6 +38,13 @@ namespace Infrastracture.Characters.CharacterBuilder
             return this;
         }
 
+        public CharacterCreationBuilder CreateClass(ClassName className)
+        {
+            classType = ClassFactory.Create(className);
+
+            return this;
+        }
+
         public CharacterCreationBuilder CreateBackground(LoreType loreType)
         {
             background = new BackGround(loreType);
@@ -44,6 +55,7 @@ namespace Infrastracture.Characters.CharacterBuilder
         public CharacterCreationBuilder CreateSpecie(SpecieName specieName)
         {
             specie = SpecieFactory.Create(specieName);
+            this.spells = specie.GetSpells(this.level).ToList();
 
             return this;
         }
@@ -51,6 +63,8 @@ namespace Infrastracture.Characters.CharacterBuilder
         public CharacterCreationBuilder CreateSpecie(ElfSubType subType)
         {
             specie = SpecieFactory.Create(subType);
+            List<Spell> ElfSpells = specie.GetSpells(this.level, subType).ToList();
+            this.spells.AddRange(ElfSpells);
 
             return this;
         }
@@ -84,7 +98,7 @@ namespace Infrastracture.Characters.CharacterBuilder
             return this;
         }
 
-        public CharacterCreationBuilder AtLevel(int level)
+        public CharacterCreationBuilder AtLevel(short level)
         {
             if (level < 1)
             {

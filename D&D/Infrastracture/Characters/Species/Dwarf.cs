@@ -15,6 +15,6 @@ namespace Infrastracture.Characters.Species
             DarkVisionLenght = 120;
         }
 
-        public override int LifeSpanPerLevel => 1;
+        public override short LifeSpanPerLevel => 1;
     }
 }

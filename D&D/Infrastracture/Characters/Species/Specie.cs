@@ -1,4 +1,5 @@
-using Infrastracture.Characters.Abilities;
+using Infrastracture.Characters.Spells;
+using Infrastracture.GameItems;
 
 namespace Infrastracture.Characters.Spices
 {
@@ -12,11 +13,21 @@ namespace Infrastracture.Characters.Spices
         public SpecieType Type { get; }
         public SpecieName Name { get; }
         public Size Size { get;  set; }
-        public int Speed { get; protected set; }
+        public short Speed { get; protected set; }
         public bool HasDarkVision { get; protected set; }
-        public int? DarkVisionLenght { get; protected set; }
+        public short? DarkVisionLenght { get; protected set; }
         public ElementalDamageType? DamageResistence { get; protected set; }
-        public virtual int LifeSpanPerLevel => 0;
+        public virtual short LifeSpanPerLevel => 0;
+
+        public virtual IReadOnlyCollection<Spell> GetSpells(short level)
+        {
+            return Array.Empty<Spell>();
+        }
+
+        public virtual IReadOnlyCollection<Spell> GetSpells(short level, object? subType)
+        {
+            return Array.Empty<Spell>();
+        }
 
     }
 }

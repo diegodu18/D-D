@@ -4,14 +4,14 @@ namespace Infrastracture.GameItems
 {
     public static class Dice
     {
-        public static int DiceAmount { get; private set; } = 1;
+        public static short DiceAmount { get; private set; } = 1;
 
-        public static void AddDice(int amount)
+        public static void AddDice(short amount)
         {
             DiceAmount += amount;
         }
 
-        public static int RollDice()
+        public static short RollDice()
         {
             var result = 0;
 
