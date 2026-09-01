@@ -1,4 +1,5 @@
-﻿using Infrastracture.Characters.Spices;
+﻿using Infrastracture.Characters.Spells;
+using Infrastracture.Characters.Spices;
 using Infrastracture.GameItems;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,75 @@ namespace Infrastracture.Characters.Species
                     DamageResistence = ElementalDamageType.Poison;
                     break;
             }
+        }
+
+        public override IReadOnlyCollection<Spell> GetSpells(short level, object? subType)
+        {
+            if (subType is not TielingSubType tielingSubType)
+            {
+                throw new ArgumentException("Invalid SubTieling.", nameof(subType));
+            }
+
+            var spells = new List<Spell>();
+
+            switch (tielingSubType)
+            {
+                case TielingSubType.Chthonic:
+                    if (level >= 1)
+                    {
+                        spells.Add(new Spell { SpellName = SpellName.ChillTouch });
+                    }
+
+                    if (level >= 3)
+                    {
+                        spells.Add(new Spell { SpellName = SpellName.FalseLife });
+                    }
+
+                    if (level >= 5)
+                    {
+                        spells.Add(new Spell { SpellName = SpellName.RayOfEnfeeblement });
+                    }
+                    break;
+
+                case TielingSubType.Infernal:
+                    if (level >= 1)
+                    {
+                        spells.Add(new Spell { SpellName = SpellName.FireBolt });
+                    }
+
+                    if (level >= 3)
+                    {
+                        spells.Add(new Spell { SpellName = SpellName.HellishRebuke });
+                    }
+
+                    if (level >= 5)
+                    {
+                        spells.Add(new Spell { SpellName = SpellName.Darkness });
+                    }
+                    break;
+
+                case TielingSubType.Abyssal:
+                    if (level >= 1)
+                    {
+                        spells.Add(new Spell { SpellName = SpellName.PoisonSprey });
+                    }
+
+                    if (level >= 3)
+                    {
+                        spells.Add(new Spell { SpellName = SpellName.RayOfSickness });
+                    }
+
+                    if (level >= 5)
+                    {
+                        spells.Add(new Spell { SpellName = SpellName.HoldPerson });
+                    }
+                    break;
+
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(tielingSubType), tielingSubType, "Invalid SubTieling.");
+            }
+
+            return spells;
         }
     }
 

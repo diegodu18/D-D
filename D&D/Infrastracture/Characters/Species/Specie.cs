@@ -1,5 +1,6 @@
 using Infrastracture.Characters.Spells;
 using Infrastracture.GameItems;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Infrastracture.Characters.Spices
 {
@@ -20,6 +21,11 @@ namespace Infrastracture.Characters.Spices
         public virtual short LifeSpanPerLevel => 0;
 
         public virtual IReadOnlyCollection<Spell> GetSpells(short level)
+        {
+            return Array.Empty<Spell>();
+        }
+
+        public virtual IReadOnlyCollection<Spell> GetSpells(object? subType)
         {
             return Array.Empty<Spell>();
         }

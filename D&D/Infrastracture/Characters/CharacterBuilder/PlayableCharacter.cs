@@ -20,7 +20,7 @@ namespace Infrastracture.Characters.CharacterBuilder
         public BackGround Background { get; }
         public Guid UserId { get; set; }
         public short Id { get; set; }
-        public Skills Senses { get; set; }
+        public Skills Skills { get; set; }
 
     }
 }

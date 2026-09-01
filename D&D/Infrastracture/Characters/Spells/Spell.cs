@@ -1,12 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Infrastracture.Characters.Spells
+﻿namespace Infrastracture.Characters.Spells
 {
-    public abstract class Spell
+    public enum SpellName
+    {
+        ChillTouch,
+        DancingLights,
+        Darkness,
+        DetectMagic,
+        Druidcraft,
+        FaerieFire,
+        FireBolt,
+        HoldPerson,
+        Longstrider,
+        MistyStep,
+        PassWithoutTrace,
+        PoisonSprey,
+        Prestidigitation,
+        RayOfSickness,
+        RayOfEnfeeblement,
+        FalseLife,
+        HellishRebuke,
+        MinorIlusion,
+        SpeakWithAnimals,
+        Mending
+    }
+
+    public class Spell
     {
         public short SpellID { get; set; }
+        public SpellName SpellName { get; set; }
         public string Description { get; set; }
         public string Name { get; set; }
         public SpellLevel SpellLevel {  get; set; }

@@ -20,7 +20,7 @@ namespace Infrastracture.GameItems
                 result += Random.Shared.Next(1, 21);
             }
 
-            return result;
+            return (short)result;
         }
     }
 }

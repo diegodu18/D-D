@@ -1,4 +1,5 @@
 using Infrastracture.Characters.Spells;
+using AbilitiesNS = Infrastracture.Characters.Abilities;
 
 namespace Infrastracture.Characters.Classes
 {
@@ -6,7 +7,7 @@ namespace Infrastracture.Characters.Classes
     {
         public string Name { get; protected set; }
 
-        public virtual IReadOnlyCollection<Spell> GetSpells(short level)
+        public virtual IReadOnlyCollection<Spell> GetSpells(ClassName className, short level)
         {
             return Array.Empty<Spell>();
         }

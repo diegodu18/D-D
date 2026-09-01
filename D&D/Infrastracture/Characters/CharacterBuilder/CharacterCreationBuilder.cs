@@ -4,6 +4,7 @@ using Infrastracture.Characters.Classes;
 using Infrastracture.Characters.Species;
 using Infrastracture.Characters.Spices;
 using Infrastracture.Characters.Spells;
+using Infrastracture.Characters.Abilities;
 
 namespace Infrastracture.Characters.CharacterBuilder
 {
@@ -13,7 +14,8 @@ namespace Infrastracture.Characters.CharacterBuilder
         private ClassType? classType;
         private Specie? specie;
         private BackGround? background;
-        private CharacterAbilities? abilities;
+        private CharacterAbilities abilities;
+        private Skills skills;  
 
         private List<Spell> spells;
         private short level = 1;
@@ -23,19 +25,13 @@ namespace Infrastracture.Characters.CharacterBuilder
             ArgumentException.ThrowIfNullOrWhiteSpace(name);
             this.name = name;
             this.spells = new List<Spell>();
+            this.abilities = new CharacterAbilities();
+            this.skills = new Skills();
         }
 
         public static CharacterCreationBuilder Create(string name)
         {
             return new CharacterCreationBuilder(name);
-        }
-
-        public CharacterCreationBuilder CreateClass(ClassType classType)
-        {
-            ArgumentNullException.ThrowIfNull(classType);
-            this.classType = classType;
-
-            return this;
         }
 
         public CharacterCreationBuilder CreateClass(ClassName className)
@@ -72,7 +68,8 @@ namespace Infrastracture.Characters.CharacterBuilder
         public CharacterCreationBuilder CreateSpecie(GnomeSubType subType)
         {
             specie = SpecieFactory.Create(subType);
-
+            List<Spell> gnomeSpells = specie.GetSpells(subType).ToList();
+            this.spells.AddRange(gnomeSpells);
             return this;
         }
 
@@ -87,6 +84,13 @@ namespace Infrastracture.Characters.CharacterBuilder
         {
             specie = SpecieFactory.Create(subType);
 
+            return this;
+        }
+        public CharacterCreationBuilder CreateSpecie(TielingSubType subType, Size size)
+        {
+            specie = SpecieFactory.Create(subType, size);
+            List<Spell> tielingSpells = specie.GetSpells(this.level, subType).ToList();
+            this.spells.AddRange(tielingSpells);
             return this;
         }
 
@@ -131,7 +135,7 @@ namespace Infrastracture.Characters.CharacterBuilder
                 throw new InvalidOperationException("Las habilidades del personaje son obligatorias.");
             }
 
-            return new PlayableCharacter(name!, specie, background, classType, level, abilities!);
+            return new PlayableCharacter(name!, specie, background, classType, level, abilities);
         }
     }
 }

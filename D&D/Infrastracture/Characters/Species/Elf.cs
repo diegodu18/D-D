@@ -42,51 +42,51 @@ namespace Infrastracture.Characters.Species
                 case ElfSubType.HighElf:
                     if (level >= 1)
                     {
-                        spells.Add(new Prestidigitation());
+                        spells.Add(new Spell { SpellName = SpellName.Prestidigitation });
                     }
 
                     if (level >= 3)
                     {
-                        spells.Add(new DetectMagic());
+                        spells.Add(new Spell { SpellName = SpellName.DetectMagic });
                     }
 
                     if (level >= 5)
                     {
-                        spells.Add(new MistyStep());
+                        spells.Add(new Spell { SpellName = SpellName.MistyStep });
                     }
                     break;
 
                 case ElfSubType.WoodElf:
                     if (level >= 1)
                     {
-                        spells.Add(new Druidcraft());
+                        spells.Add(new Spell { SpellName = SpellName.Druidcraft });
                     }
 
                     if (level >= 3)
                     {
-                        spells.Add(new Longstrider());
+                        spells.Add(new Spell { SpellName = SpellName.Longstrider });
                     }
 
                     if (level >= 5)
                     {
-                        spells.Add(new PassWithoutTrace());
+                        spells.Add(new Spell { SpellName = SpellName.PassWithoutTrace });
                     }
                     break;
 
                 case ElfSubType.Drow:
                     if (level >= 1)
                     {
-                        spells.Add(new DancingLights());
+                        spells.Add(new Spell { SpellName = SpellName.DancingLights });
                     }
 
                     if (level >= 3)
                     {
-                        spells.Add(new FaerieFire());
+                        spells.Add(new Spell { SpellName = SpellName.FaerieFire });
                     }
 
                     if (level >= 5)
                     {
-                        spells.Add(new Darkness());
+                        spells.Add(new Spell { SpellName = SpellName.Darkness });
                     }
                     break;
 

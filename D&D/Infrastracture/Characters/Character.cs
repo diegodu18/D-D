@@ -14,7 +14,7 @@ namespace Infrastracture.Characters
             Name = name;
             Specie = specie;
             Level = level;
-            LifeSpan = level * specie.LifeSpanPerLevel;
+            LifeSpan = (short)(level * specie.LifeSpanPerLevel);
         }
 
         public string Name { get; set; }

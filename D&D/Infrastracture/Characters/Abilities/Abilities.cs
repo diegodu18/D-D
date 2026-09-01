@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-
-namespace Infrastracture.Characters.Abilities
+﻿namespace Infrastracture.Characters.Abilities
 {
     public class Abilities
     {
